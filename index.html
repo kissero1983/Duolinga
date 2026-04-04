@@ -56,13 +56,19 @@
     </label>
     <p></p>
 
+    <label id="lbl_Module">
+      Module:
+    </label>
+    <p></p>
+    
     <div id="menu">
-      <button onclick="loadModule('general')">General</button>
-      <button onclick="loadModule('cafeteria')">Cafeteria</button>
-      <button onclick="loadModule('family_profession')">Family and Professions</button>
-      <button onclick="loadModule('restaurant')">Restaurant</button>
-      <button onclick="loadModule('market')">Market</button>
+      <button onclick="selectButton(this); loadModule('general')">General</button>
+      <button onclick="selectButton(this); loadModule('cafeteria')">Cafeteria</button>
+      <button onclick="selectButton(this); loadModule('family_profession')">Family and Professions</button>
+      <button onclick="selectButton(this); loadModule('restaurant')">Restaurant</button>
+      <button onclick="selectButton(this); loadModule('market')">Market</button>
     </div>
+
 
   </div>
 

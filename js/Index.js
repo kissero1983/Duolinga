@@ -30,3 +30,12 @@ async function loadModule(name) {
     });
 }
 
+function selectButton(btn) {
+  // quitar la clase 'active' de todos los botones
+  const buttons = document.querySelectorAll('#menu button');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  // agregar la clase 'active' al botón presionado
+  btn.classList.add('active');
+}
+

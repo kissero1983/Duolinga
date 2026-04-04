@@ -17,6 +17,7 @@ async function setInterfaceLanguage(lang) {
     document.querySelector("#lbl_shufflePhrases").textContent = i18n.shufflePhrases;
     document.querySelector("#lbl_showIndexPhrases").textContent = i18n.showIndexPhrases;
     document.querySelector("#lbl_omitSpecialChars").textContent = i18n.omitSpecialChars;
+    document.querySelector("#lbl_Module").textContent = i18n.module;
     document.querySelector("h2").textContent = i18n.gameTitle;
     document.querySelector("#menu button:nth-child(1)").textContent = i18n.modules.general;
     document.querySelector("#menu button:nth-child(2)").textContent = i18n.modules.cafeteria;
