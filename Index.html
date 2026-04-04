@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Duolinga</title>
+  
+  <!-- Importar el archivo CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/switch.css">
+</head>
+<body>
+  <button id="btn_Settings">⚙️ Settings</button>
+  <div id="config">
+    <label id="lbl_Language" for="cmb_Language">Language: </label>
+    <select id="cmb_Language" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italian</option>
+    </select>
+    <p></p>
+
+    <label id="lbl_SecondLanguage" for="cmb_SecondLanguage">Language to learn: </label>
+    <select id="cmb_SecondLanguage" onchange="changeTargetLanguage(this.value)">
+      <option value="es">Spanish</option>
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italian</option>
+    </select>
+    <p></p>
+
+    <label id="lbl_showIndexPhrases" for="chk_showIndexPhrases">
+      Show Index Phrases
+    </label>
+    <label class="switch">
+      <input type="checkbox" id="chk_showIndexPhrases">
+      <span class="slider round"></span>
+    </label>
+    <p></p>
+
+    <label id="lbl_shufflePhrases" for="chk_shufflePhrases">
+      Random Phrases
+    </label>
+    <label class="switch">
+      <input type="checkbox" id="chk_shufflePhrases" checked>
+      <span class="slider round"></span>
+    </label>
+    <p></p>
+
+    <label id="lbl_omitSpecialChars" for="chk_omitSpecialChars">
+      Skip Special Characters
+    </label>
+    <label class="switch">
+      <input type="checkbox" id="chk_omitSpecialChars">
+      <span class="slider round"></span>
+    </label>
+    <p></p>
+
+    <div id="menu">
+      <button onclick="loadModule('general')">General</button>
+      <button onclick="loadModule('cafeteria')">Cafeteria</button>
+      <button onclick="loadModule('family_profession')">Family and Professions</button>
+      <button onclick="loadModule('restaurant')">Restaurant</button>
+      <button onclick="loadModule('market')">Market</button>
+    </div>
+
+  </div>
+
+  <h2>.:: PHRASES GAME ::.</h2>
+  
+  <p></p>
+  
+  <h3 id="CategoryTitle"></h3>
+  <div id="divGame"></div>
+
+  <!-- Importar las funciones principales -->
+  <script src="js/utils.js"></script>
+  <script src="js/Index.js"></script>
+  
+</body>

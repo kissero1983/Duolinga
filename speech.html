@@ -1,0 +1,13 @@
+<input type="text" id="frase" placeholder="Escribe en alemán">
+<button id="play">🔊</button>
+
+<script>
+  document.getElementById("play").addEventListener("click", () => {
+    const texto = document.getElementById("frase").value;
+    if (texto.trim() !== "") {
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = "de-DE"; // Alemán (Alemania)
+      speechSynthesis.speak(utterance);
+    }
+  });
+</script>

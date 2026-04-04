@@ -1,0 +1,98 @@
+CAFETERIA:
+
+Estoy armando en javascript una aplicacion estilo Duolingo.
+Te pido me generes 2 arrays con esta estructura, con 100 frases simples en Español (afirmacion, negacion, interrogacion) y su traduccion al Aleman.
+
+export const frasesES = [
+  "frase 1 en Español",
+  "frase 2 en Español",
+  "frase 3 en Español"
+];
+
+export const frasesDE = [
+  "frase 1 en Aleman",
+  "frase 2 en Aleman",
+  "frase 3 en Aleman"
+];
+
+Recorda que sean frases simples para un nivel inicial.
+Que sean con tematica de una cafeteria. Ejemplos: "Un cafe con leche, por favor", "Te sin azucar, por favor", palabras de union como con,sin,y,o,etc.
+Frases sencillas que puedan ocurrir en una cafeteria. "Donde esta el baño?", "Cuanto cuesta?", etc.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+FAMILIA - AMIGOS - PROFESIONES
+
+Estoy armando en javascript una aplicacion estilo Duolingo.
+Te pido me generes 2 arrays con esta estructura, con 100 frases simples en Español (afirmacion, negacion, interrogacion) y su traduccion al Aleman.
+
+export const frasesES = [
+  "frase 1 en Español",
+  "frase 2 en Español",
+  "frase 3 en Español"
+];
+
+export const frasesDE = [
+  "frase 1 en Aleman",
+  "frase 2 en Aleman",
+  "frase 3 en Aleman"
+];
+
+Recorda que sean frases simples para un nivel inicial.
+Que sean con tematica de relacion con personas (familiares, amigos, etc). Ejemplos: "El es mi papa, Max", "Ella es mi hermana", "El no es mi esposo", "Esa es tu abuela?". Agregar tambien profesiones: maestro, panadero, vendedor, musico, etc. "Es tu hermano panadero?", "Mi hermana es maestra", "No, mi hermano no es carpintero".
+Frases sencillas que puedan relacionar parentezco con familiares u amigos y sus profesiones.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+RESTAURANT:
+
+Estoy armando en javascript una aplicacion estilo Duolingo.
+Te pido me generes 3 arrays con esta estructura, con 70 frases simples en Español (afirmacion, negacion, interrogacion) y su traduccion al Ingles y al Aleman.
+
+export const phrases_ES = [
+  "frase 1 en Español",
+  "frase 2 en Español",
+  "frase 3 en Español"
+];
+
+export const phrases_EN = [
+  "frase 1 en Ingles",
+  "frase 2 en Ingles",
+  "frase 3 en Ingles"
+];
+
+export const phrases_DE = [
+  "frase 1 en Aleman",
+  "frase 2 en Aleman",
+  "frase 3 en Aleman"
+];
+
+Recorda que sean frases simples para un nivel inicial.
+Que sean con tematica de un Restaurant. Ejemplos: Pedir el menu, diferentes platos, etc. Palabras de union como con,sin,y,o,etc.
+Frases sencillas que puedan ocurrir en una Restaurant. "Donde esta el baño?", "Cuanto cuesta?", etc.
+---------------------------------------------------------------------------------------------------------
+SUPERMERCADO:
+
+Estoy armando en javascript una aplicacion estilo Duolingo.
+Te pido me generes 3 arrays con esta estructura, con 70 frases simples en Español (afirmacion, interrogacion) y su traduccion al Ingles y al Aleman.
+
+export const phrases_ES = [
+  "frase 1 en Español",
+  "frase 2 en Español",
+  "frase 3 en Español"
+];
+
+export const phrases_EN = [
+  "frase 1 en Ingles",
+  "frase 2 en Ingles",
+  "frase 3 en Ingles"
+];
+
+export const phrases_DE = [
+  "frase 1 en Aleman",
+  "frase 2 en Aleman",
+  "frase 3 en Aleman"
+];
+
+Recorda que sean frases simples para un nivel inicial.
+Que sean con tematica de compras en un supermercado o almacen. Ejemplos con diferentes frutas, verduras, articulos basicos.
+Preguntar Cuanto cuestan, donde se encuentran, cualquier frase util que se podria decir en un mercado u almacen. 
+Ejemplos: "Quiero pagar ahora", "¿Dónde pago?", "¿Puede darme una bolsa?", "¿Tiene ofertas hoy?", "¿Dónde encuentro las bananas?",
+"Quiero manzanas",   "Necesito pan", "Busco leche", etc.
