@@ -30,16 +30,3 @@ async function loadModule(name) {
     });
 }
 
-//Inicializar en español
-setInterfaceLanguage("en");
-
-const toggleBtn = document.getElementById("btn_Settings");
-const configDiv = document.getElementById("config");
-
-toggleBtn.addEventListener("click", () => {
-    if (configDiv.style.display === "none" || configDiv.style.display === "") {
-    configDiv.style.display = "block";
-    } else {
-    configDiv.style.display = "none";
-    }
-});

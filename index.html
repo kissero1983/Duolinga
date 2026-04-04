@@ -78,3 +78,23 @@
   <script src="js/Index.js"></script>
   
 </body>
+<script>
+  window.onload = async function() {
+    //Inicializar en español
+    await setInterfaceLanguage("en");
+
+    const toggleBtn = document.getElementById("btn_Settings");
+    const configDiv = document.getElementById("config");
+
+    toggleBtn.addEventListener("click", () => {
+        if (configDiv.style.display === "none" || configDiv.style.display === "") {
+        configDiv.style.display = "block";
+        } else {
+        configDiv.style.display = "none";
+        }
+    });
+
+    // Cargar el módulo general por defecto
+    loadModule('general');
+  };
+</script>
