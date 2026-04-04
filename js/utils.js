@@ -78,6 +78,9 @@ function setCategoryName(catName) {
     case "restaurant":
         categoryName = i18n.modules.restaurant;
     break;
+    case "market":
+        categoryName = i18n.modules.market;
+    break;
     }
 }
 
