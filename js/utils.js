@@ -41,6 +41,9 @@ function setPrimaryPhrases(lang, module) {
     case "it":
         primary_phrases = module.phrases_IT;
         break;
+    case "pt":
+        primary_phrases = module.phrases_PT;
+        break;
     default:
         console.log("Idioma no soportado");
     }
@@ -59,6 +62,9 @@ function setSecondaryPhrases(lang, module) {
     break;
     case "it":
         secondary_phrases = module.phrases_IT;
+    break;
+    case "pt":
+        secondary_phrases = module.phrases_PT;
     break;
     default:
         console.log("Idioma no soportado");
