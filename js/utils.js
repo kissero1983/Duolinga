@@ -165,31 +165,116 @@ function createPhrase(index) {
     
     const secondaryDiv = document.createElement("div");
     secondaryDiv.className = "secondaryDiv";
-    secondaryDiv.textContent = palabrasMezcladas.join(" ");
+    secondaryDiv.textContent = "";
     contenedor.appendChild(secondaryDiv);
+
+    palabrasMezcladas.forEach((palabra, j) => {
+        const chip = document.createElement("span");
+        chip.className = "wordChip";
+        chip.id = `word_${index}_${j}`;
+        chip.draggable = true;
+        chip.dataset.word = palabra;
+        chip.textContent = palabra;
+
+        chip.addEventListener("dragstart", event => {
+            event.dataTransfer.effectAllowed = "move";
+            event.dataTransfer.setData("text/plain", event.target.id);
+        });
+
+        chip.addEventListener("click", () => {
+            if (chip.parentElement === secondaryDiv) {
+                answerDiv.appendChild(chip);
+            } else if (chip.parentElement === answerDiv) {
+                secondaryDiv.appendChild(chip);
+            }
+            updateAnswerPlaceholder();
+        });
+
+        secondaryDiv.appendChild(chip);
+    });
+
+    const answerDiv = document.createElement("div");
+    answerDiv.className = "answerDiv";
+    contenedor.appendChild(answerDiv);
+
+    const placeholderText = i18n.dragHere || "Drag words here";
+    const placeholder = document.createElement("span");
+    placeholder.className = "drop-placeholder";
+    placeholder.textContent = placeholderText;
+    answerDiv.appendChild(placeholder);
+
+    function updateAnswerPlaceholder() {
+        const hasWord = answerDiv.querySelector(".wordChip");
+        const placeholderEl = answerDiv.querySelector(".drop-placeholder");
+
+        if (hasWord) {
+            if (placeholderEl) placeholderEl.remove();
+        } else if (!placeholderEl) {
+            answerDiv.textContent = "";
+            answerDiv.appendChild(placeholder);
+        }
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function handleDrop(event, target) {
+        event.preventDefault();
+        const id = event.dataTransfer.getData("text/plain");
+        const dragged = document.getElementById(id);
+        if (dragged && target !== dragged.parentElement) {
+            target.appendChild(dragged);
+            updateAnswerPlaceholder();
+        }
+    }
+
+    [secondaryDiv, answerDiv].forEach(dropZone => {
+        dropZone.addEventListener("dragover", allowDrop);
+        dropZone.addEventListener("dragenter", event => {
+            event.preventDefault();
+            dropZone.classList.add("dragover");
+        });
+        dropZone.addEventListener("dragleave", () => {
+            dropZone.classList.remove("dragover");
+        });
+        dropZone.addEventListener("drop", event => {
+            dropZone.classList.remove("dragover");
+            handleDrop(event, dropZone);
+        });
+    });
 
     const inputRow = document.createElement("div");
     inputRow.className = "input-row";
 
-    const input = document.createElement("input");
-    input.id = "txtPhrase"
-    input.type = "text";
-    input.placeholder = i18n.inputPlaceholder;
-    inputRow.appendChild(input);
-
     const boton = document.createElement("button");
-    boton.id = "btnCheck"
+    boton.id = "btnCheck_" + index;
     boton.textContent = i18n.checkButton;
     inputRow.appendChild(boton);
+
+    const resetButton = document.createElement("button");
+    resetButton.type = "button";
+    resetButton.id = "btnReset_" + index;
+    resetButton.textContent = i18n.resetButton || "Reset";
+    inputRow.appendChild(resetButton);
 
     const resultado = document.createElement("div");
     inputRow.appendChild(resultado);
 
-    boton.addEventListener("click", () => {
-        const respuestaUsuario = normalize(input.value);
-        const respuestaCorrecta = normalize(omitSpecials(secondary_phrases[index]));
+    function resetAnswer() {
+        const chips = [...answerDiv.querySelectorAll(".wordChip")];
+        chips.forEach(chip => secondaryDiv.appendChild(chip));
+        updateAnswerPlaceholder();
+        resultado.textContent = "";
+        resultado.className = "";
+    }
 
-        if (respuestaUsuario === respuestaCorrecta) {
+    boton.addEventListener("click", () => {
+        const respuestaUsuario = [...answerDiv.querySelectorAll(".wordChip")]
+            .map(chip => normalize(chip.dataset.word));
+        const respuestaCorrecta = palabrasOriginal.map(word => normalize(word));
+
+        if (respuestaUsuario.length === respuestaCorrecta.length && respuestaUsuario.every((word, i) => word === respuestaCorrecta[i])) {
             resultado.textContent = i18n.correct;
             resultado.className = "correct";
         } else {
@@ -197,6 +282,8 @@ function createPhrase(index) {
             resultado.className = "incorrect";
         }
     });
+
+    resetButton.addEventListener("click", resetAnswer);
 
     contenedor.appendChild(inputRow);
     return contenedor;

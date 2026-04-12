@@ -16,7 +16,9 @@ export const language_PT = {
     market: "Mercado"
   },
   inputPlaceholder: "Digite a frase aqui...",
+  dragHere: "Arraste as palavras aqui",
   checkButton: "Verificar",
+  resetButton: "Reiniciar",
   correct: "✅ Correto!",
   incorrect: "❌ Tente novamente",
   modulePrefix: "Módulo: "

@@ -39,9 +39,49 @@ h3 {
     color: #555;
 }
 .secondaryDiv {
+    min-height: 50px;
     margin-bottom: 15px;
-    font-weight: bold;
-    color: #222;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px dashed #aaa;
+    background: #fafafa;
+}
+.answerDiv {
+    min-height: 50px;
+    margin-bottom: 15px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    border: 2px dashed #0078d7;
+    background: #f0f8ff;
+    transition: background 0.2s ease;
+}
+.answerDiv.dragover,
+.answerDiv:hover {
+    background: #dbeeff;
+}
+.wordChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 400px;
+    background: #0078d7;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 50;
+}
+.wordChip:active {
+    cursor: grabbing;
+}
+.drop-placeholder {
+    color: #666;
+    font-size: 14px;
 }
 .input-row {
     display: flex;
