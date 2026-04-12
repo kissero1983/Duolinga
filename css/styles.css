@@ -74,7 +74,7 @@ h3 {
     color: #fff;
     cursor: pointer;
     user-select: none;
-    font-weight: 50;
+    font-weight: 600;
 }
 .wordChip:active {
     cursor: grabbing;
@@ -181,4 +181,72 @@ button.active {
   outline: none;
   border-color: #2196F3;
   box-shadow: 0 0 5px rgba(33, 150, 243, 0.6);
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  h1, h2, h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .frase {
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 100%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  .primaryDiv {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .secondaryDiv, .answerDiv {
+    min-height: 40px;
+    padding: 8px;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .wordChip {
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .drop-placeholder {
+    font-size: 12px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  input[type="text"] {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  #config {
+    margin: 15px 0;
+    font-size: 12px;
+  }
+
+  #cmb_Language, #cmb_SecondLanguage {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }
