@@ -155,6 +155,7 @@ function createPhrase(index) {
 
     const primaryDiv = document.createElement("div");
     primaryDiv.className = "primaryDiv";
+
     
     if (chkShowIndex.checked) {
         primaryDiv.textContent = "[" + index + "] - "  + primary_phrases[index];
@@ -206,6 +207,7 @@ function createPhrase(index) {
     placeholder.className = "drop-placeholder";
     placeholder.textContent = placeholderText;
     answerDiv.appendChild(placeholder);
+
 
     function updateAnswerPlaceholder() {
         const hasWord = answerDiv.querySelector(".wordChip");
@@ -262,6 +264,17 @@ function createPhrase(index) {
     resetButton.textContent = i18n.resetButton || "Reset";
     inputRow.appendChild(resetButton);
 
+    const showAnswerDiv = document.createElement("div");
+    showAnswerDiv.className = "showAnswerDiv";
+    showAnswerDiv.textContent = omitSpecials(secondary_phrases[index]);
+
+    const showAnswerButton = document.createElement("button");
+    showAnswerDiv.style.display = "none";
+    showAnswerButton.type = "button";
+    showAnswerButton.id = "btnShowAnswer_" + index;
+    showAnswerButton.textContent = i18n.showAnswerButton || "Show Answer";
+    inputRow.appendChild(showAnswerButton);
+
     const resultado = document.createElement("div");
     inputRow.appendChild(resultado);
 
@@ -287,8 +300,19 @@ function createPhrase(index) {
         }
     });
 
-    resetButton.addEventListener("click", resetAnswer);
+    showAnswerButton.addEventListener("click", () => {
+        if (showAnswerDiv.style.display === "none") {
+            showAnswerDiv.style.display = "block";
+            showAnswerButton.textContent = i18n.hideAnswerButton || "Hide Answer";
+        } else {
+            showAnswerDiv.style.display = "none";
+            showAnswerButton.textContent = i18n.showAnswerButton || "Show Answer";
+        }
+    });
 
+    resetButton.addEventListener("click", resetAnswer);
     contenedor.appendChild(inputRow);
+    contenedor.appendChild(showAnswerDiv);
+
     return contenedor;
 }

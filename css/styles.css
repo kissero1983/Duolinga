@@ -48,6 +48,12 @@ h3 {
     border: 1px dashed #aaa;
     background: #fafafa;
 }
+.showAnswerDiv {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: green;
+    text-align: right;
+}
 .answerDiv {
     min-height: 50px;
     margin-bottom: 15px;

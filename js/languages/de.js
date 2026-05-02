@@ -20,6 +20,8 @@ export const language_DE = {
   dragHere: "Ziehen Sie die Wörter hierher",
   checkButton: "Prüfen",
   resetButton: "Zurücksetzen",
+  showAnswerButton: "Antwort anzeigen",
+  hideAnswerButton: "Antwort verbergen",
   correct: "✅ Richtig!",
   incorrect: "❌ Versuche es erneut",
   modulePrefix: "Modul: "
