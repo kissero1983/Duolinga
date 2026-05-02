@@ -303,10 +303,9 @@ function createPhrase(index) {
     showAnswerButton.addEventListener("click", () => {
         if (showAnswerDiv.style.display === "none") {
             showAnswerDiv.style.display = "block";
-            showAnswerButton.textContent = i18n.hideAnswerButton || "Hide Answer";
-        } else {
-            showAnswerDiv.style.display = "none";
-            showAnswerButton.textContent = i18n.showAnswerButton || "Show Answer";
+            setTimeout(() => {
+                showAnswerDiv.style.display = "none";
+            }, 6000);
         }
     });
 
