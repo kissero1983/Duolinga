@@ -13,7 +13,8 @@ export const language_FR = {
     cafeteria: "Cafétéria",
     family_profession: "Famille et professions",
     restaurant: "Restaurant",
-    market: "Marché"
+    market: "Marché",
+    health: "Santé"
   },
   inputPlaceholder: "Tapez la phrase ici...",
   dragHere: "Faites glisser les mots ici",

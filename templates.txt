@@ -96,3 +96,13 @@ Que sean con tematica de compras en un supermercado o almacen. Ejemplos con dife
 Preguntar Cuanto cuestan, donde se encuentran, cualquier frase util que se podria decir en un mercado u almacen. 
 Ejemplos: "Quiero pagar ahora", "¿Dónde pago?", "¿Puede darme una bolsa?", "¿Tiene ofertas hoy?", "¿Dónde encuentro las bananas?",
 "Quiero manzanas",   "Necesito pan", "Busco leche", etc.
+---------------------------------------------------------------------------------------------------
+SALUD:
+
+Quiero generar una categoria nueva que sea con tematica relacionada con la salud.
+Generar preguntas, afirmaciones, algunas pocas negaciones, para un nivel inicial con cosas que podrian servir en una guardia medica.
+Ejemplos: Necesito un medico, donde esta la guardia?, necesito que venga la enfermera, me duele el estomago, me siento enfermo, Donde esta el hospital?, me duele la espalda, necesitara una receta.
+
+Generar el archivo "health.js" con unas 70 frases en Español y luego todas sus traducciones en el resto de los idiomas, generar el boton "health"
+en la seccion de configuracion siguiendo la misma logica que el resto de las categorias (sus traducciones, funcionamiento, etc).
+

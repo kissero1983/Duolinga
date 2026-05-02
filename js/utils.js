@@ -24,6 +24,7 @@ async function setInterfaceLanguage(lang) {
     document.querySelector("#menu button:nth-child(3)").textContent = i18n.modules.family_profession;
     document.querySelector("#menu button:nth-child(4)").textContent = i18n.modules.restaurant;
     document.querySelector("#menu button:nth-child(5)").textContent = i18n.modules.market;
+    document.querySelector("#menu button:nth-child(6)").textContent = i18n.modules.health;
     });
 }
 
@@ -93,6 +94,9 @@ function setCategoryName(catName) {
     break;
     case "market":
         categoryName = i18n.modules.market;
+    break;
+    case "health":
+        categoryName = i18n.modules.health;
     break;
     }
 }
